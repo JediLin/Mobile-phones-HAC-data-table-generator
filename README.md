@@ -37,7 +37,7 @@
 
 ## 使用方法
 
-- 執行 `update.bat` 即可自動下載最新的醫療器材許可證資料集，擷取資料及轉換檔案，在相同路徑位置儲存成 `mobile-accessibility-phones.html`，然後呼叫瀏覽器開啟。
+- 執行 `update.bat` 即可自動下載最新的 GARI 行動電話親和力功能資料庫，擷取資料及轉換檔案，在相同路徑位置儲存成 `mobile-accessibility-phones.html`，然後呼叫瀏覽器開啟。
 - 如果不想更新資料，只想單純瀏覽檢視資料表，可以直接用任何網頁瀏覽器開啟 `mobile-accessibility-phones.html` 即可。
 - 如果要把資料表傳給別人，只需要提供 `mobile-accessibility-phones.html` 檔案就夠了。
 
