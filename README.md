@@ -10,6 +10,12 @@
 
 我寫了一小段批次檔，用來自動下載這個 XML 格式資料庫，並且利用 [XSL Transformations (XSLT)](https://www.w3.org/TR/xslt/) 技術，從中擷取關於 [ANSI C63.19](https://ieeexplore.ieee.org/document/8906258) 標準的助聽器相容性 (Hearing Aid Compatibility, HAC) 資訊，以便查詢檢索。
 
+## 下載
+
+請下載[最新版套件](https://github.com/JediLin/Mobile-phones-HAC-data-table-generator/releases/latest)，找 `Source code (zip)` 那個連結。
+
+使用前記得要解壓縮。
+
 ## 安裝‧環境設定
 
 這是一個可攜帶、免安裝的工具，只需要把幾個必要的檔案放在同一個資料夾內，就可以使用了。最必要的檔案是 `update.bat` 和 `mobile-accessibility-phones.xsl`，另外還有幾個開源工具要分別下載：
