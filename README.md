@@ -12,6 +12,7 @@
 
 ## 使用方法
 
+- 首先要把 Perl 裝起來。
 - 執行 `update.bat` 即可自動下載（或更新）資料庫，做必要的編輯修改，然後在相同路徑位置儲存成 `mobile-accessibility-phones.xml`。
 - 把 `mobile-accessibility-phones.xml`, `mobile-accessibility-phones.xsl`, `mobile-accessibility-phones.css` 三個檔案放在可以透過 http 或 https 通訊協定取用的地方，然後用網頁瀏覽器開啟 `mobile-accessibility-phones.xml` 即可。
   - 單純放在自己的硬碟上然後用瀏覽器開啟會有問題，因為 file 協定的安全性等級不同。
