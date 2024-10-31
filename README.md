@@ -10,12 +10,34 @@
 
 我寫了一小段批次檔，用來自動下載這個 XML 格式資料庫，並且利用 [XSL Transformations (XSLT)](https://www.w3.org/TR/xslt/) 技術，從中擷取關於 [ANSI C63.19](https://ieeexplore.ieee.org/document/8906258) 標準的助聽器相容性 (Hearing Aid Compatibility, HAC) 資訊，以便查詢檢索。
 
+## 安裝‧環境設定
+
+有幾個開源工具要先分別下載：
+
+- [Windows binaries of GNU Wget](https://eternallybored.org/misc/wget/)
+  - 根據系統架構 (x86, x64, ARM64) 下載最新版的 EXE 檔案即可
+  - 您應該會獲得一個 `wget.exe` 執行檔
+  - 把 `wget.exe` 執行檔放到跟 `update.bat` 同一個目錄內
+- [UnZip for Windows](https://gnuwin32.sourceforge.net/packages/unzip.htm)
+  - 下載[最新版本的 Binaries](https://gnuwin32.sourceforge.net/downlinks/unzip-bin-zip.php)
+  - 您應該會從 SourceForge 獲得 `unzip-5.51-1-bin.zip` 壓縮檔
+  - 解壓縮 `unzip-5.51-1-bin.zip`
+  - 從 `bin` 資料夾裡面找到 `unzip.exe` 執行檔
+  - 把 `unzip.exe` 執行檔放到跟 `update.bat` 同一個目錄內
+- [XMLStarlet command line XML toolkit](https://sourceforge.net/projects/xmlstar/)
+  - 下載[最新版本](https://sourceforge.net/projects/xmlstar/files/latest/download)
+  - 您應該會從 SourceForge 獲得 `xmlstarlet-1.6.1-win32.zip` 壓縮檔
+  - 解壓縮 `xmlstarlet-1.6.1-win32.zip`
+  - 從 `xmlstarlet-1.6.1` 資料夾裡面找到 `xml.exe` 執行檔
+  - 把 `xml.exe` 執行檔放到跟 `update.bat` 同一個目錄內
+
+這個步驟只需要做一次。上述開源工具中，除了 Wget 還有在更新之外，另外兩個都已經很久沒更新了。
+
 ## 使用方法
 
-- 首先要把 Perl 裝起來。
-- 執行 `update.bat` 即可自動下載（或更新）資料庫，做必要的編輯修改，然後在相同路徑位置儲存成 `mobile-accessibility-phones.xml`。
-- 把 `mobile-accessibility-phones.xml`, `mobile-accessibility-phones.xsl`, `mobile-accessibility-phones.css` 三個檔案放在可以透過 http 或 https 通訊協定取用的地方，然後用網頁瀏覽器開啟 `mobile-accessibility-phones.xml` 即可。
-  - 單純放在自己的硬碟上然後用瀏覽器開啟會有問題，因為 file 協定的安全性等級不同。
+- 執行 `update.bat` 即可自動下載最新的醫療器材許可證資料集，擷取資料及轉換檔案，在相同路徑位置儲存成 `mobile-accessibility-phones.html`，然後呼叫瀏覽器開啟。
+- 如果不想更新資料，只想單純瀏覽檢視資料表，可以直接用任何網頁瀏覽器開啟 `mobile-accessibility-phones.html` 即可。
+- 如果要把資料表傳給別人，只需要提供 `mobile-accessibility-phones.html` 檔案就夠了。
 
 ## 技術細節說明
 

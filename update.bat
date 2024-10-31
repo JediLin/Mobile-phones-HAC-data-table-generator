@@ -1,7 +1,28 @@
+@echo off
 :start
-IF EXIST "mobile-accessibility-phones.xml" (
-  del /F /Q mobile-accessibility-phones.bak.xml
-  copy /Y mobile-accessibility-phones.xml mobile-accessibility-phones.bak.xml
+chcp 65001
+cls
+IF NOT EXIST "wget.exe" (
+  echo 請先取得 GNU Wget 執行檔。現在即將使用預設瀏覽器帶您前往 GNU Wget 下載網頁，請按任意鍵繼續……
+  pause > nul
+  start "" "https://eternallybored.org/misc/wget/"
+  exit
+)
+IF NOT EXIST "unzip.exe" (
+  echo 請先取得 UnZip 執行檔。現在即將使用預設瀏覽器下載 UnZip，請按任意鍵繼續……
+  pause > nul
+  start "" "https://gnuwin32.sourceforge.net/downlinks/unzip-bin-zip.php"
+  exit
+)
+IF NOT EXIST "xml.exe" (
+  echo 請先取得 XMLStarlet 工具執行檔。現在即將使用預設瀏覽器下載 XMLStarlet，請按任意鍵繼續……
+  pause > nul
+  start "" "https://sourceforge.net/projects/xmlstar/files/latest/download"
+  exit
+)
+IF EXIST "mobile-accessibility-phones.html" (
+  del /F /Q mobile-accessibility-phones.bak.html
+  copy /Y mobile-accessibility-phones.xml mobile-accessibility-phones.bak.html
 )
 
 :download
@@ -14,17 +35,19 @@ IF EXIST "mobile-accessibility-phones.xml" (
 )
 
 :cont
-perl -i.bak -pe "s|<\?.+\?>|<\?xml version=\"1.0\" encoding=\"UTF-8\"\?>\r<\?xml-stylesheet type=\"text\/xsl\" href=\"mobile-accessibility-phones.xsl\"\?>|;" mobile-accessibility-phones.xml
+xml.exe tr mobile-accessibility-phones.xsl mobile-accessibility-phones.xml > mobile-accessibility-phones.html
 
-IF EXIST "mobile-accessibility-phones.xml" (
-  del /F /Q mobile-accessibility-phones.xml.bak
+IF EXIST "mobile-accessibility-phones.html" (
+  del /F /Q mobile-accessibility-phones.xml
   GOTO end
 ) ELSE (
-  copy /Y mobile-accessibility-phones.xml.bak mobile-accessibility-phones.xml
-  del /F /Q mobile-accessibility-phones.xml.bak
   GOTO cont
 )
 
 :end
-del /F /Q /Y *.
+del /F /Q *.
+cls
+echo 資料表產生完成。現在即將使用預設瀏覽器開啟資料表 (mobile-accessibility-phones.html)，請按任意鍵繼續……
+pause > nul
+start "" "mobile-accessibility-phones.html"
 exit

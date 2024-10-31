@@ -5,11 +5,22 @@
   <xsl:template match="/">
     <html>
     <head>
-    <link rel="Stylesheet" href="mobile-accessibility-phones.css" type="text/css" />
     <title>HAC Rating</title>
+    <style>
+table thead th, table tbody td {
+  padding: 5px;
+}
+table tbody tr:nth-child(2n) td {
+  background: #ffcccc;
+}
+table tbody tr:nth-child(2n+1) td {
+  background: #ccffff;
+}
+    </style>
     </head>
     <body>
       <table>
+      	<caption>Mobile Phones HAC Rating</caption>
       	<thead>
       	  <tr><th>Brand</th><th>Model</th><th>HAC Rating</th></tr>
       	</thead>
@@ -33,6 +44,7 @@
           </xsl:for-each>
         </tbody>
       </table>
+      <p>Data source: <a href="https://www.gari.info/download-gari-db.cfm">GARI Database</a></p>
     </body>
     </html>
   </xsl:template>
