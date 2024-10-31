@@ -31,7 +31,7 @@
   - 從 `xmlstarlet-1.6.1` 資料夾裡面找到 `xml.exe` 執行檔
   - 把 `xml.exe` 執行檔放到跟 `update.bat`, `mobile-accessibility-phones.xsl` 同一個目錄內
 
-這個步驟只需要做一次。上述開源工具中，除了 Wget 還有在更新之外，另外兩個都已經很久沒更新了。
+這個步驟只需要做一次。上述開源工具中，除了 Wget 還有在更新之外，XMLStarlet 已經很久沒更新了。
 
 如果缺少必要的檔案，在執行 `update.bat` 的時候也會提示，並且自動開啟預設瀏覽器到對應工具的下載網頁。
 
