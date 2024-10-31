@@ -13,12 +13,6 @@ IF NOT EXIST "wget.exe" (
   start "" "https://eternallybored.org/misc/wget/"
   exit
 )
-IF NOT EXIST "unzip.exe" (
-  echo 請先取得 UnZip 執行檔。現在即將使用預設瀏覽器下載 UnZip，請按任意鍵繼續……
-  pause > nul
-  start "" "https://gnuwin32.sourceforge.net/downlinks/unzip-bin-zip.php"
-  exit
-)
 IF NOT EXIST "xml.exe" (
   echo 請先取得 XMLStarlet 工具執行檔。現在即將使用預設瀏覽器下載 XMLStarlet，請按任意鍵繼續……
   pause > nul
