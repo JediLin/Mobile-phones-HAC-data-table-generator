@@ -21,7 +21,7 @@ IF NOT EXIST "xml.exe" (
 )
 IF EXIST "mobile-accessibility-phones.html" (
   del /F /Q mobile-accessibility-phones.bak.html
-  copy /Y mobile-accessibility-phones.xml mobile-accessibility-phones.bak.html
+  copy /Y mobile-accessibility-phones.html mobile-accessibility-phones.bak.html
 )
 
 :download
