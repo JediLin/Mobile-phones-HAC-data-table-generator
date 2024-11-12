@@ -12,7 +12,7 @@
 
 ## 下載
 
-請下載[最新版套件](https://github.com/JediLin/Mobile-phones-HAC-data-table-generator/releases/latest)，找 `HAC.zip` 那個連結。
+請下載[最新版套件](https://github.com/JediLin/Mobile-phones-HAC-data-table-generator/releases/latest)，找 `HAC.zip` 那個連結，或者已經整理好所有第三方工具的 `HAC_full_x64.zip` 連結。
 
 使用前記得要解壓縮。
 
