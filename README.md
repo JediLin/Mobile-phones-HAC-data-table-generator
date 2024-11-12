@@ -1,7 +1,8 @@
 # 行動電話助聽器相容性 (HAC) 資料表產生器
+![GitHub all releases](https://img.shields.io/github/downloads/JediLin/Mobile-phones-HAC-data-table-generator/total?style=for-the-badge)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/JediLin/Mobile-phones-HAC-data-table-generator?label=LATEST%20RELEASE&style=for-the-badge)
-![GitHub commits since tagged version](https://img.shields.io/github/commits-since/JediLin/Mobile-phones-HAC-data-table-generator/latest?style=for-the-badge)
 <br/>
+![GitHub commits since tagged version](https://img.shields.io/github/commits-since/JediLin/Mobile-phones-HAC-data-table-generator/latest?style=for-the-badge)
 ![GitHub last commit](https://img.shields.io/github/last-commit/JediLin/Mobile-phones-HAC-data-table-generator?style=for-the-badge)
 ![GitHub issues](https://img.shields.io/github/issues/JediLin/Mobile-phones-HAC-data-table-generator?style=for-the-badge)
 
@@ -11,7 +12,7 @@
 
 ## 下載
 
-請下載[最新版套件](https://github.com/JediLin/Mobile-phones-HAC-data-table-generator/releases/latest)，找 `Source code (zip)` 那個連結。
+請下載[最新版套件](https://github.com/JediLin/Mobile-phones-HAC-data-table-generator/releases/latest)，找 `HAC.zip` 那個連結。
 
 使用前記得要解壓縮。
 
