@@ -1,0 +1,3541 @@
+<!DOCTYPE html><html lang="zh-Hant-TW">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>助聽器相容性 (HAC) 評級資料表</title>
+<style>
+:root {
+  --background: hsl(210,6%,12%);
+  --currentline: hsl(236,10%,33%);
+  --selection: hsl(216,8%,24%);
+  --selectionmark: hsla(140,2%,77%,80%);
+  --foreground: hsl(140,2%,77%);
+  --comment: hsl(120,0%,59%);
+  --red: hsl(0,50%,60%);
+  --orange: hsl(24,65%,62%);
+  --yellow: hsl(39,80%,69%);
+  --green: hsl(65,39%,57%);
+  --aqua: hsl(171,28%,64%);
+  --blue: hsl(207,31%,62%);
+  --purple: hsl(286,22%,65%);
+  --nightbackground: hsl(210,6%,12%);
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: hsl(0,0%,98%);
+    --currentline: hsl(0,0%,92%);
+    --selection: hsl(0,0%,82%);
+    --selectionmark: hsla(228,8%,24%,80%);
+    --foreground: hsl(228,8%,24%);
+    --comment: hsl(231,4%,64%);
+    --red: hsl(345,69%,49%);
+    --orange: hsl(22,78%,49%);
+    --yellow: hsl(46,60%,48%);
+    --green: hsl(140,62%,36%);
+    --aqua: hsl(199,100%,43%);
+    --blue: hsl(222,78%,52%);
+    --purple: hsl(263,86%,60%);
+    --nightbackground: hsl(210,6%,12%);
+  }
+}
+@media (prefers-contrast: less) {
+  :root {
+    --background: hsl(44,87%,94%);
+    --currentline: hsl(45,64%,91%);
+    --selection: hsl(46,42%,88%);
+    --selectionmark: hsla(196,13%,45%,80%);
+    --foreground: hsl(196,13%,45%);
+    --comment: hsl(180,7%,60%);
+    --red: hsl(1,71%,52%);
+    --orange: hsl(18,80%,44%);
+    --yellow: hsl(45,100%,35%);
+    --green: hsl(68,100%,30%);
+    --aqua: hsl(175,59%,40%);
+    --blue: hsl(205,69%,49%);
+    --purple: hsl(237,43%,60%);
+    --nightbackground: hsl(210,6%,12%);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: hsl(210,6%,12%);
+    --currentline: hsl(236,10%,33%);
+    --selection: hsl(216,8%,24%);
+    --selectionmark: hsla(140,2%,77%,80%);
+    --foreground: hsl(140,2%,77%);
+    --comment: hsl(120,0%,59%);
+    --red: hsl(0,50%,60%);
+    --orange: hsl(24,65%,62%);
+    --yellow: hsl(39,80%,69%);
+    --green: hsl(65,39%,57%);
+    --aqua: hsl(171,28%,64%);
+    --blue: hsl(207,31%,62%);
+    --purple: hsl(286,22%,65%);
+    --nightbackground: hsl(210,6%,12%);
+  }
+}
+@media (prefers-contrast: more) {
+  :root {
+    --background: hsl(0,0%,0%);
+    --currentline: hsl(0,0%,16%);
+    --selection: hsl(0,0%,26%);
+    --selectionmark: hsla(0,0%,92%,80%);
+    --foreground: hsl(0,0%,92%);
+    --comment: hsl(120,1%,59%);
+    --red: hsl(358,62%,57%);
+    --orange: hsl(26,77%,59%);
+    --yellow: hsl(47,77%,59%);
+    --green: hsl(68,55%,54%);
+    --aqua: hsl(169,39%,60%);
+    --blue: hsl(213,56%,67%);
+    --purple: hsl(281,45%,72%);
+    --nightbackground: hsl(210,6%,12%);
+  }
+}
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+h1, .center {
+  text-align: center;
+}
+a {
+  color: var(--green);
+  text-decoration: underline;
+}
+a:link {
+  color: var(--green);
+  text-decoration: underline;
+}
+a:visited {
+  color: var(--orange);
+  text-decoration: underline;
+}
+a:active {
+  color: var(--red);
+}
+a:hover {
+  color: var(--red);
+}
+input:focus, textarea:focus {
+  color: var(--foreground);
+  background: var(--currentline);
+}
+table {
+  border-collapse: collapse;
+  border: 1px solid var(--foreground);
+  margin: 0 auto;
+}
+table thead th, table tbody td {
+  border: 1px solid;
+  padding: 5px;
+  max-width: 20em;
+  word-wrap: break-word;
+}
+table + * {
+  padding-top: 1em;
+}
+table tbody tr:nth-child(2n) td {
+  background: var(--selection);
+}
+table tbody tr:nth-child(2n+1) td {
+  background: var(--currentline);
+}
+footer {
+  display: grid;
+  grid-template-columns: 1fr auto 0.3fr auto 1fr;
+  gap: 2em;
+}
+section#about {
+  grid-column: 2;
+}
+section#link {
+  grid-column: 4;
+}
+      </style>
+</head>
+<body>
+<h1>行動電話助聽器相容性 (HAC) 評級</h1>
+<table id="myTable">
+<caption>製表日期：2024 年 12 月 6 日</caption>
+<thead><tr>
+<th>廠牌<br>快查：<input type="text" id="myInput" onkeyup="myFunction()" placeholder="輸入廠牌">
+</th>
+<th>型號</th>
+<th>HAC 評級</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>LG</td>
+<td>Phoenix 4(LM-X210APM)</td>
+<td>M3T3</td>
+</tr>
+<tr>
+<td>LG</td>
+<td>V35 LM-V350AWM</td>
+<td>M3T3</td>
+</tr>
+<tr>
+<td>LG</td>
+<td>K30(LM-X410AS, LM-X410ASR)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>LGE</td>
+<td>LG V40(LM-V405UA)</td>
+<td>M4 T3</td>
+</tr>
+<tr>
+<td>LGE</td>
+<td>LG Stylo4+(LM-Q710WA)</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>LGE</td>
+<td>Aristo 3(LM-X220MA)</td>
+<td>M3 &amp; T3</td>
+</tr>
+<tr>
+<td>LG</td>
+<td>K9 (LM-X210WM)</td>
+<td>M3T3</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G7 Play: XT1952-1, XT1952-2, XT1952-3, XT1952-4, XT1952-6, XT1952DL, XT1952-5</td>
+<td>M4/T4 for XT1952-2 // M4/T3 for XT1952-3, XT1952-4, XT1952DL, XT1952-5</td>
+</tr>
+<tr>
+<td>LGE</td>
+<td>G8 ThinQ(LM-G820TM)</td>
+<td>M3, T3 (TBD)</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S9(SM-G960U1)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>LGE</td>
+<td>G8 ThinQ(LM-G820UM)</td>
+<td>M4 T3</td>
+</tr>
+<tr>
+<td>Google Pixel</td>
+<td>Pixel 3a XL</td>
+<td>Meet M3/T3 rating for US SKUs</td>
+</tr>
+<tr>
+<td>Google Pixel</td>
+<td>Pixel 3a</td>
+<td>Meet M3/T3 rating for US SKUs</td>
+</tr>
+<tr>
+<td>Q60</td>
+<td>Q60(LM-X525EAW, LM-X525BAW, LM-X525HA, LM-X525ZAW, LM-X525ZA)</td>
+<td></td>
+</tr>
+<tr>
+<td>K50</td>
+<td>K50(LM-X520EMW, LM-X520BMW, LM-X520HM, LM-X520ZMW, LM-X520ZM)</td>
+<td></td>
+</tr>
+<tr>
+<td>LGE</td>
+<td>G8S ThinQ(LM-G810EAW, LM-G810EA, LM-G810RA)</td>
+<td></td>
+</tr>
+<tr>
+<td>LGE</td>
+<td>Stylo 5(LM-Q720CS)</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Haechi(SM-G889A)</td>
+<td>M3/T4</td>
+</tr>
+<tr>
+<td>Pixel</td>
+<td>Pixel 4</td>
+<td>Meet M3/T4 rating for US SKUs</td>
+</tr>
+<tr>
+<td>Pixel</td>
+<td>Pixel 4 XL</td>
+<td>Meet M3/T4 rating for US SKUs</td>
+</tr>
+<tr>
+<td>LGE</td>
+<td>K20(LM-X120BMW, LM-X120HM)</td>
+<td></td>
+</tr>
+<tr>
+<td>LGE</td>
+<td>K20(LM-X120HM, LM-X120BMW, LM-X120EMW)</td>
+<td></td>
+</tr>
+<tr>
+<td>LG</td>
+<td>Journey(LG L322DL)</td>
+<td>M3 T3</td>
+</tr>
+<tr>
+<td>LGE</td>
+<td>Xpression Plus 2(LM-X420AS8)</td>
+<td>M4T3</td>
+</tr>
+<tr>
+<td>LGE</td>
+<td>K40(LM-X420AS)</td>
+<td>M4T3</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Motorola Razr: XT2000-1, XT2000-2</td>
+<td>No</td>
+</tr>
+<tr>
+<td>LG</td>
+<td>Prime 2(LM-X320AA)</td>
+<td>M3T3</td>
+</tr>
+<tr>
+<td>LG</td>
+<td>Arena 2(LM-X320APM)</td>
+<td>M3T3</td>
+</tr>
+<tr>
+<td>LG</td>
+<td>Neon Plus(LM-X320AM8)</td>
+<td>M3T3</td>
+</tr>
+<tr>
+<td>LG</td>
+<td>Escape Plus(LM-X320CM)</td>
+<td>M3T3</td>
+</tr>
+<tr>
+<td>LGE</td>
+<td>Xpression Plus 2(LM-X420CS)</td>
+<td>M4T3</td>
+</tr>
+<tr>
+<td>LGE</td>
+<td>Stylo 5+ (LM-Q720AM)</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>LGE</td>
+<td>K50S(LM-X540HM, LM-X540EMW)</td>
+<td></td>
+</tr>
+<tr>
+<td>LGE</td>
+<td>K40S(LM-X430HM, LM-X430BMW, LM-X430EMW)</td>
+<td></td>
+</tr>
+<tr>
+<td>Apple iPhone</td>
+<td>iPhone 11 (A2111, A2221, A2222, A2223)</td>
+<td>M3, T4</td>
+</tr>
+<tr>
+<td>Apple iPhone</td>
+<td>iPhone 11 Pro (A2160, A2215, A2216, A2217)</td>
+<td>M3, T4</td>
+</tr>
+<tr>
+<td>Apple iPhone</td>
+<td>iPhone 11 Pro Max (A2161, A2218, A2219, A2220)</td>
+<td>M3, T4</td>
+</tr>
+<tr>
+<td>LGE</td>
+<td>G8X (LM-G850UM)</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>LGE</td>
+<td>G8X (LM-G850EMW, LM-G850EM, LM-G850UM2)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A01(SM-A015V, SM-A015U)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A01(SM-A015M/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A01(SM-A015M)</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto E6 Play: XT2029-1, XT2029-2, XT2029-3</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Note10+ 5G(SM-N976U)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S10 Lite(SM-G770F/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S10 Lite(SM-G770F)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S10(SM-G973F/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy M30(SM-M305M)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Note10 Lite(SM-N770F/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>samsung</td>
+<td>Galaxy S10+(SM-G975U)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S10(SM-G973U)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S10e(SM-G970U)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A51(SM-A515F/DST)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S10 5G(SM-G977U)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>HUAWEI</td>
+<td>P30 Lite(MAR-LX3Bm)</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G8 Power: XT2041-4, XT2041-5, XT2041-6, XT2041-7, XT2041DL</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G8 Power: XT2041-1, XT2041-3</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S10 5G(SM-G977T)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S10 5G(SM-G977P)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A51(SM-A515F/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>ONEPLUS</td>
+<td>HD1925</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A71(SM-A715F/DS, SM-A715F)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Note10+ 5G (SM-N976V)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Note10+ (SM-N975U SPR)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Note10+ (SM-N975U USCC)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Note10+ (SM-N975U VzW)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Note10+ (SM-N975U1)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S9(SM-G960U)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S9+(SM-G965U)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Note9(SM-N960UATT)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Note9(SM-N960UVZW)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Note9(SM-N960UTMB)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Note9(SM-N960USPR)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Note9(SM-N960UUSC)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G8: XT2045-1, XT2045-2, XT2045-6</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G8 Stylus: XT2043-4, XT2043-5, XT2043-6, XT2043-8</td>
+<td>Yes, it is rated M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy XCover Pro(SM-G715U1, SM-G715U, SM-G715A)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A01(SM-A015T1)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>OnePlus</td>
+<td>IN2017</td>
+<td>Yes, M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy J2 Core(SM-J260MU/DS, SM-J260MU)</td>
+<td></td>
+</tr>
+<tr>
+<td>LG</td>
+<td>V60 ThinQ 5G(LM-V600TM)</td>
+<td>M3T3</td>
+</tr>
+<tr>
+<td>Sony</td>
+<td>Xperia XZ2 Premium</td>
+<td>M4/T4</td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>2.3</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy M31(SM-M315F/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A01(SM-S111DL)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S20(SM-G980F/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S20+ 5G(SM-G986B/DS, SM-G985F/DS, SM-G985F)</td>
+<td></td>
+</tr>
+<tr>
+<td>LGE</td>
+<td>K51S(LM-K510BMW, LM-K510HM, LM-K510ZMW)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S20 Ultra 5G(SM-G988B/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S20 5G(SM-G981U ATT, TMO)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S20+ 5G(SM-G986U VZW)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S20 Ultra 5G(SM-G988U VZW)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S20 5G(SM-G981U SPR, USC)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S20 5G(SM-G981U1)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S20+ 5G(SM-G986U SPR, USC)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S20+ 5G(SM-G986U1)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S20+ 5G(SM-G986U ATT, TMO)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S20 Ultra 5G(SM-G988U ATT, TMO)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S20 Ultra 5G(SM-G988U SPR, USC)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S20 Ultra 5G(SM-G988U1)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Z Flip(SM-F700F/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Z Flip(SM-F700U/DS, SM-F700U1/DS, SM-F707U, SM-F707U1)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>LGE</td>
+<td>K51S(LM-K510EMW, LM-K510ZM)</td>
+<td></td>
+</tr>
+<tr>
+<td>LGE</td>
+<td>K61(LM-Q630EAW, LM-Q630EA, LM-Q630UM)</td>
+<td></td>
+</tr>
+<tr>
+<td>LGE</td>
+<td>K61(LM-Q630BMW, LM-Q630BAW, LM-Q630HM, LM-Q630HA)</td>
+<td></td>
+</tr>
+<tr>
+<td>LGE</td>
+<td>K41S(LM-K410EMW, LM-K410ZM, LM-K410WM)</td>
+<td></td>
+</tr>
+<tr>
+<td>LGE</td>
+<td>K41S(LM-K410BMW, LM-K410HM, LM-K410FMW, LM-K410ZMW)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A11(SM-A115A, SM-A115AZ)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A11(SM-A115U)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy M11(SM-M115M/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A11(SM-A115M/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A01(SM-A015U1)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A01(SM-A015A)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A01(SM-A015AZ)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A51(SM-A515U, SM-A515U1, SM-A515W, SM-S515DL)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Sony</td>
+<td>Xperia L4</td>
+<td></td>
+</tr>
+<tr>
+<td>Sony</td>
+<td>Xperia 10 II</td>
+<td></td>
+</tr>
+<tr>
+<td>Sony</td>
+<td>Xperia 1 II</td>
+<td>M4/T4</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Beyond 2(SM-G975F/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>LG</td>
+<td>Stylo 6(LM-Q730TM)</td>
+<td>M4T3</td>
+</tr>
+<tr>
+<td>LG</td>
+<td>V60 ThinQ 5G(LM-V600AM)</td>
+<td>M4T4</td>
+</tr>
+<tr>
+<td>samsung</td>
+<td>Galaxy A6(SM-A600P, SM-A600A, SM-A600T, SM-A600T1, SM-A600U)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>samsung</td>
+<td>Galaxy J6 (SM-J600GT/DS, SM-J600GT)</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G8 Power Lite: XT2055-1, XT2055-2, XT2055-3, XT2055-4, Lenovo K11 Power</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto E6S: XT2053-1, XT2053-2, XT2053-3, XT2053-4, XT2053-5, XT2053-6, Lenovo K11</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A31(SM-A315G/DSL, SM-A315G/L)</td>
+<td></td>
+</tr>
+<tr>
+<td>OPPO</td>
+<td>CPH2021</td>
+<td></td>
+</tr>
+<tr>
+<td>HONOR</td>
+<td>HONOR 9X Lite(JSN-L23)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A21(SM-A215U)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G Fast: XT2045-3</td>
+<td>Yes, M3/T3</td>
+</tr>
+<tr>
+<td>ZTE</td>
+<td>ZTE Blade A3 Lite</td>
+<td></td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>C1</td>
+<td></td>
+</tr>
+<tr>
+<td>OPPO</td>
+<td>CPH2025</td>
+<td></td>
+</tr>
+<tr>
+<td>OPPO</td>
+<td>CPH2005</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A11(SM-A115M)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A11(SM-A115U1, SM-S115DL)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy M11(SM-M115M)</td>
+<td></td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>1.3</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>moto e: XT2052-1, XT2052-5, XT2052-6</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>moto e: XT2052-2, XT2052-2PP, XT2052-3</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A11(SM-A115AP)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>LGE</td>
+<td>Phoenix 5(LM-K300AM)</td>
+<td>M3T3</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Motorola Edge: XT2063-2, XT2063-3, XT2063-4</td>
+<td>XT2063-2 is rated M3/T3</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Motorola Edge+: XT2061-1, XT2061-3</td>
+<td>XT2061-1: M3/T3
+XT2061-3: M4/T3</td>
+</tr>
+<tr>
+<td>LGE</td>
+<td>Risio 4(LM-K300CMR)</td>
+<td>M3T3</td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>5310</td>
+<td></td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>C2</td>
+<td></td>
+</tr>
+<tr>
+<td>Apple</td>
+<td>iPhone SE</td>
+<td>M3, T4</td>
+</tr>
+<tr>
+<td>LG</td>
+<td>LM-Y120UM</td>
+<td>M3T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A21(SM-A215U1)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A21(SM-S215DL)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>LGE</td>
+<td>K51(LM-K500QM6)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>google</td>
+<td>Pixel 4a</td>
+<td>Meet M3/T3 rating for US SKUs</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A21s(SM-A217M/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>LGE</td>
+<td>Stylo 6(LM-Q730AM)</td>
+<td>Yes(M4/T3)</td>
+</tr>
+<tr>
+<td>HUAWEI</td>
+<td>P40 (ANA-L04)</td>
+<td></td>
+</tr>
+<tr>
+<td>HUAWEI</td>
+<td>P40 Pro (ELS-N04)</td>
+<td></td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>5.3</td>
+<td>Yes,M4/T4</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>motorola one fusion+: XT2067-1, XT2067-2, XT2067-3, XT2067-4</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>motorola one fusion: XT2073-1, XT2073-2</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A71 5G(SM-A716U, SM-A716U1)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A71 5G(SM-A716V)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G8 Stylus: XT2043-7</td>
+<td></td>
+</tr>
+<tr>
+<td>LG</td>
+<td>Harmony 4(LM-K400AM)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Motorola Razr 5G: XT2071-2, XT2071-3, XT2071-4, XT2071-5</td>
+<td>M4/T4 for XT2071-2, XT2071-3, XT2071-5</td>
+</tr>
+<tr>
+<td>LGE</td>
+<td>Velvet 4G(LM-G910EMW, LM-G910HM, LM-G910HMW)</td>
+<td></td>
+</tr>
+<tr>
+<td>HUAWEI</td>
+<td>Y6p (MED-LX9)</td>
+<td></td>
+</tr>
+<tr>
+<td>HUAWEI</td>
+<td>Y7p (ART-L28)</td>
+<td></td>
+</tr>
+<tr>
+<td>HUAWEI</td>
+<td>P40 Lite(JNY-LX2)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A51 5G(SM-A516U, SM-A516U1)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A51 5G(SM-A516V)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>LG</td>
+<td>K30(LM-X320QMG)</td>
+<td>M3 T3</td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>C5 Endi</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>C2 Tennen</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>C2 Tava</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>HUAWEI</td>
+<td>Y5p(DUA-LX9)</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G9 Play: XT2083-1, XT2083-3, XT2083-5, Lenovo K12 Note: XT2083-4</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>SM-A102U1</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A20(SM-A205U, SM-A205U1)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>LGE</td>
+<td>K31(LM-K300QM6)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>LGE</td>
+<td>K22(LM-K200HM, LM-K200HMW, LM-K200BMW)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A01 Core(SM-A013M/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola Mobility</td>
+<td>Motorola One 5G: XT2075-1, XT2075-2, XT2075-5</td>
+<td>Yes, it is rated M3/T3</td>
+</tr>
+<tr>
+<td>LG</td>
+<td>LM-G900TM</td>
+<td>M3T3</td>
+</tr>
+<tr>
+<td>LGE</td>
+<td>Velvet(LM-G900UM)</td>
+<td>M4T3</td>
+</tr>
+<tr>
+<td>CAT</td>
+<td>CAT S42</td>
+<td></td>
+</tr>
+<tr>
+<td>LG</td>
+<td>Stylo 6(LM-Q730QM6)</td>
+<td>M4T3</td>
+</tr>
+<tr>
+<td>LG</td>
+<td>Stylo 6(LM-Q730QM)</td>
+<td>M4T3</td>
+</tr>
+<tr>
+<td>HONOR</td>
+<td>HONOR 9A (MOA-LX9N)</td>
+<td></td>
+</tr>
+<tr>
+<td>HONOR</td>
+<td>HONOR 9S (DUA-LX9)</td>
+<td></td>
+</tr>
+<tr>
+<td>Moxee</td>
+<td>MT-T800</td>
+<td>No</td>
+</tr>
+<tr>
+<td>LG</td>
+<td>K71(LM-Q730BAW)</td>
+<td></td>
+</tr>
+<tr>
+<td>LGE</td>
+<td>K42(LM-K420HM, LM-K420HMW, LM-K420BMW)</td>
+<td></td>
+</tr>
+<tr>
+<td>LG</td>
+<td>Xpression Plus 3(LM-K400AKR)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Haechi(SM-G889A)</td>
+<td>M3/T4</td>
+</tr>
+<tr>
+<td>LGE</td>
+<td>K52(LM-K520BMW, LM-K520HM, LM-K525BMW, LM-K525HM)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Note20 5G(SM-N981B/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Note20 Ultra 5G(SM-N986B/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Note 20 5G(SM-N981U)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Note20 Ultra 5G(SM-N986U)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Z Fold2 5G(SM-F916U VZW)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Z Fold2 5G(SM-F916B)</td>
+<td></td>
+</tr>
+<tr>
+<td>OnePlus</td>
+<td>KB2007</td>
+<td>Yes, M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Z Fold2 5G(SM-F916U1)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Z Fold2 5G(SM-F916U ATT, TMO, SPR)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>google</td>
+<td>Pixel 4a 5G</td>
+<td>M3/T4 rating for US SKUs</td>
+</tr>
+<tr>
+<td>google</td>
+<td>Pixel 5</td>
+<td>M4/T3 rating for US SKUs</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S20 FE 5G(SM-G781V, SM-G781U, SM-G781U1/DS, SM-G781W, SM-G780G/DS, SM-G780G/DSM, SM-G780G)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G9 Plus: XT2087-1, XT2087-2</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto E7 Plus: XT2081-1, XT2081-2, XT2081-3</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G Play: XT2093-2, XT2093-3, XT2093-4, XT2093-2PP, XT2093DL</td>
+<td>Yes, M3/T3</td>
+</tr>
+<tr>
+<td>LG</td>
+<td>WING 5G(LM-F100TM)</td>
+<td>M4T3</td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>C3</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G 5G Plus: XT2075-3, XT2075-4</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S20 FE(SM-G780F/DSM, SM-G780F, SM-G780F/DS, SM-G781B)</td>
+<td></td>
+</tr>
+<tr>
+<td>LG</td>
+<td>K92 5G(LM-K920TM)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>OnePlus</td>
+<td>BE2012</td>
+<td>T3/M3</td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>8.3 5G</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G9 Power: XT2091-3, XT2091-4, XT2091-7, XT2091-8</td>
+<td></td>
+</tr>
+<tr>
+<td>HUAWEI</td>
+<td>Y9a(FRL-LX3)</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G Play: XT2093-1, XT2093-7</td>
+<td>Yes, M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy M51(SM-M515F/DSN)</td>
+<td></td>
+</tr>
+<tr>
+<td>HUAWEI</td>
+<td>mate30pro(Lion-L29)</td>
+<td></td>
+</tr>
+<tr>
+<td>LG</td>
+<td>K92 5G(LM-K920AM)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Sony</td>
+<td>Xperia 5 II</td>
+<td>M4/T4</td>
+</tr>
+<tr>
+<td>LGE</td>
+<td>LM-K200TM</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>OnePlus</td>
+<td>BE2028</td>
+<td>T3/M3</td>
+</tr>
+<tr>
+<td>LG</td>
+<td>WING 5G(LM-F100VM)</td>
+<td>M4T4</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A42 5G(SM-A426B)</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Motorola One 5G ACE: XT2113-1, XT2113-1PP, XT2113-2, XT2113-5</td>
+<td>Yes, M3/T3</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G Stylus: XT2115-1, XT2115-2, XT2115-3, XT2115-4, XT2115DL</td>
+<td>Yes, M3/T3</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G Power: XT2117-1, XT2117-2, XT2117-3, XT2117-4, XT2117DL</td>
+<td>Yes, M3/T3</td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>2 V Tella</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy M21s(SM-F415F/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>150 2020</td>
+<td></td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>125</td>
+<td></td>
+</tr>
+<tr>
+<td>Apple</td>
+<td>iPhone 12 mini</td>
+<td>M3, T4</td>
+</tr>
+<tr>
+<td>Apple</td>
+<td>iPhone 12</td>
+<td>M3, T4</td>
+</tr>
+<tr>
+<td>Apple</td>
+<td>iPhone 12 Pro</td>
+<td>M3, T4</td>
+</tr>
+<tr>
+<td>Apple</td>
+<td>iPhone 12 Pro Max</td>
+<td>M3, T4</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A02s(SM-A025M, SM-A025M/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto E7: XT2095-1, XT2095-2, XT2095-3, XT2095-4</td>
+<td></td>
+</tr>
+<tr>
+<td>HUAWEI</td>
+<td>Y7a (PPA-LX3)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S10 Lite(SM-G770F/DS, SM-G770F)</td>
+<td></td>
+</tr>
+<tr>
+<td>HONOR</td>
+<td>HONOR 10X Lite (DNN-LX9)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S20 FE(SM-G780F/DSM, SM-G780F, SM-G780F/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S10 Lite(SM-G770U1)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A12(SM-A125F, SM-A125M, SM-A125M/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S20 5G(SM-G981U ATT, TMO)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S20+ 5G(SM-G986U VZW)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S20 Ultra 5G(SM-G988U VZW)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G10 / Moto G10 Power / Lenovo K13 Note: XT2127-1, XT2127-2, XT2127-3, XT2127-4</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G30 / Lenovo K13 Pro: XT2129-1, XT2129-2, XT2129-3</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Note20 5G(SM-N981U VZW)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Note20 Ultra 5G(SM-N986U VZW)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S20 5G(SM-G981U SPR, USC)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S20 5G(SM-G981U1)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S20 5G(SM-G981V)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S20+ 5G(SM-G986U SPR, USC)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S20+ 5G(SM-G986U1)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S20+ 5G(SM-G986U ATT, TMO)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S20 Ultra 5G(SM-G988U ATT, TMO)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S20 Ultra 5G(SM-G988U SPR, USC)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S20 Ultra 5G(SM-G988U1)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>Nokia 8 V 5G UW</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>110</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Note20 5G(SM-N981U ATT, TMO)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Note20 5G(SM-N981U USC)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Note20 5G(SM-N981U SPR)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Note20 Ultra 5G(SM-N986U ATT, TMO)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Note20 Ultra 5G(SM-N986U USC)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Note20 Ultra 5G(SM-N986U SPR)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S20 FE 5G(SM-G781V, SM-G781U, SM-G781U1/DS, SM-G781W)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Z Fold2 5G(SM-F916U VZW)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Z Fold2 5G(SM-F916U ATT, TMO, SPR)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy M12(SM-M127F/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A32 5G(SM-A326B/DS, SM-A326B)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A72(SM-A725M/DS, SM-A725M, SM-A725F/DS, SM-A725F)</td>
+<td></td>
+</tr>
+<tr>
+<td>OnePlus</td>
+<td>LE2117</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A02(SM-A022M, SM-A022M/DS, SM-M022M/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S21+ 5G(SM-G996B/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S21 Ultra 5G(SM-G998B/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S21 5G(SM-G991B/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S21 5G(SM-G991U)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S21+ 5G(SM-G996U)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S21 Ultra 5G(SM-G998U)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S10e(SM-G970U)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S10(SM-G973U)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>samsung</td>
+<td>Galaxy S10+(SM-G975U)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S10 5G(SM-G977U)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A02s(SM-A025V, SM-A025A, SM-A025AZ)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S10 5G(SM-G977P)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A52(SM-A525M/DS, SM-A525M, SM-A525F/DS, SM-A525F)</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G100: XT2125-4</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A52(SM-A526B)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A32(SM-A325M/DS, SM-A325M, SM-A325F/DS, SM-A325F)</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto E7 Power: XT2097-5, XT2097-6, XT2097-7, XT2097-12, XT2097-13, XT2097-14, XT2097-15, XT2097-16</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy M62(SM-M625F/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A02s(SM-A025U, SM-A025U1/DS, SM-S124DL)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy M51(SM-M515F/DSN)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy XCover 5(SM-G525F/DS, SM-G525F)</td>
+<td></td>
+</tr>
+<tr>
+<td>CAT</td>
+<td>CAT S62</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A32 5G(SM-A326U, SM-A326U1/DS, SM-S326DL)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A52 5G(SM-A526U, SM-A526U1)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A42 5G(SM-A426U, SM-A426U1, SM-A426U1/DS, SM-S426DL)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A51(SM-A515U, SM-A515U1)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S10e (SM-G970U1)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S10 (SM-G973U1)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S10+ (SM-G975U1)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A12(SM-A125U, SM-A125U1, SM-A125U1/DS, SM-S127DL)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A50(SM-A505U)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A50(SM-A505U1)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>3.4</td>
+<td>US version only. M3/T3.</td>
+</tr>
+<tr>
+<td>HUAWEI</td>
+<td>FRL-LX3</td>
+<td></td>
+</tr>
+<tr>
+<td>Sony</td>
+<td>Xperia Pro</td>
+<td>M4/T4</td>
+</tr>
+<tr>
+<td>OPPO</td>
+<td>CPH2173</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G50: XT2137-1, XT2137-2</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G60: XT2135-1</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G40 Fusion: XT2147-1, XT2135-2</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G20: XT2128-1, XT2128-2; Lenovo K13 Note: XT2128-3</td>
+<td></td>
+</tr>
+<tr>
+<td>Wiko</td>
+<td>Ride 3</td>
+<td>M3/T4</td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>2.4</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Google</td>
+<td>Pixel 5a</td>
+<td>M4/T3 rating for US SKUs</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A70(SM-A705U)</td>
+<td>M3</td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>C1 Plus</td>
+<td></td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>5.4</td>
+<td>US version only. M3/T3.</td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>225 4G</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>215</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>6300 4G</td>
+<td>US version only. M3/T3.</td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>8000 4G</td>
+<td></td>
+</tr>
+<tr>
+<td>OnePlus</td>
+<td>LE2127</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>OPPO</td>
+<td>CPH2211</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G Stylus 5G: XT2131-1, XT2131-2, XT2131-3, XT2131-4, XT2131DL</td>
+<td>M4 / T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A02s(SM-A025M/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A01(SM-A015M/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A11(SM-A115M/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy M11(SM-M115M/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Sony</td>
+<td>Xperia 10 III</td>
+<td></td>
+</tr>
+<tr>
+<td>Sony</td>
+<td>Xperia 1 III</td>
+<td>M4/T4</td>
+</tr>
+<tr>
+<td>Sony</td>
+<td>Xperia 5 III</td>
+<td>M4/T4</td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>G10</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A20(SM-A205G/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A11(SM-A115U)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>2720 V Flip</td>
+<td>M4/T4</td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>G20</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>CAT</td>
+<td>CAT S22 Flip</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A22 5G(SM-A226B/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>X20</td>
+<td></td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>X10</td>
+<td></td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>C20</td>
+<td>T3/M4</td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>C10</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy M32(SM-M325FV/DS)</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A22(SM-A225M/N, SM-A225M/DSN)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S21 FE 5G(SM-G990U, SM-G990U1/DS, SM-G990U1, SM-G990U2, SM-G990U3/DS)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>LGE</td>
+<td>K22+(LM-K200HA, LM-K200HAW, LM-K200BAW)</td>
+<td></td>
+</tr>
+<tr>
+<td>LGE</td>
+<td>LM-G900EM</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy M22(SM-M225FV/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>1.4</td>
+<td>M3/T4</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy M11(SM-M115M)</td>
+<td></td>
+</tr>
+<tr>
+<td>Sonim</td>
+<td>XP3900</td>
+<td>Compliant HAC M4/T4</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G60s: XT2133-1, XT2133-2, XT2133-3</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Motorola Edge 20 Pro: XT2153-1</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A01(SM-A015A, SM-A015AZ)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A01(SM-A015V, SM-A015T1, SM-A015U, SM-A015U1, SM-A015W, SM-S111DL)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G50 5G: XT2149-1</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A11(SM-A115A, SM-A115AZ, SM-A115AP)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Motorola Edge 20: XT2143-1</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Motorola Edge 5G UW: XT2141-1</td>
+<td>Yes, M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A03s(SM-A037M/DS, SM-A037M)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A22 5G(SM-A226BR/DSN, SM-A226BR/N)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A12(SM-A127M/DS, SM-A127M)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A11(SM-A115U, SM-A115U1, SM-S115DL, SM-A115W)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>OnePlus</td>
+<td>DE2118</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Schok</td>
+<td>SCHOK VOLT SV55(SV55216)</td>
+<td>M3/T4</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A02s(SM-A025V, SM-A025A, SM-A025AZ)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A10s(SM-A107F/DS, SM-A107M/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>T-Mobile</td>
+<td>WTRVL5G</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>DISH</td>
+<td>WTCELERO5G</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A02s(SM-A025U, SM-A025U1, SM-A025U1/DS, SM-S124DL)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>HUAWEI</td>
+<td>POT-LX1A</td>
+<td></td>
+</tr>
+<tr>
+<td>HUAWEI</td>
+<td>Y8p</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A20s(SM-A207F/DS, SM-A207M/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>C01 Plus</td>
+<td></td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>C1 2nd Edition</td>
+<td></td>
+</tr>
+<tr>
+<td>HUAWEI</td>
+<td>Mate 40 Pro</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A52s(SM-A528B/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Wiko</td>
+<td>Life 3</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>UMX</td>
+<td>U696CL</td>
+<td>M3/T4</td>
+</tr>
+<tr>
+<td>google</td>
+<td>Pixel 6 Pro</td>
+<td>M3/T4 rating for US SKUs</td>
+</tr>
+<tr>
+<td>google</td>
+<td>Pixel 6</td>
+<td>M3/T3 rating for US SKUs</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Motorola Edge 20 Lite: XT2139-1, XT2139-2</td>
+<td>Yes, M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Z Fold3 5G(SM-F926U)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Z Flip3 5G(SM-F711B)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Z Flip3 5G(SM-F711U)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Z Fold3 5G(SM-F926B/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>HUAWEI</td>
+<td>nova Y60</td>
+<td></td>
+</tr>
+<tr>
+<td>HUAWEI</td>
+<td>nova 8</td>
+<td></td>
+</tr>
+<tr>
+<td>HUAWEI</td>
+<td>nova 8i</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy M52 5G(SM-M526B/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>XR20</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto E20: XT2155-1, XT2155-3, XT2155-4, XT2155-5, XT2155-6, XT2155-8</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G Power 22: XT2165-1, XT2165-2, XT2165-3, XT2165-3PP, XT2165-5, XT2165DL</td>
+<td>Yes, M3/T3</td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>Nokia X100</td>
+<td>T3/M3</td>
+</tr>
+<tr>
+<td>OPPO</td>
+<td>CPH2271</td>
+<td></td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>C30</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G31: XT2173-1, XT2173-2, XT2173-3, XT2173-4</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G41: XT2167-1, XT2167-2</td>
+<td></td>
+</tr>
+<tr>
+<td>Apple</td>
+<td>iPhone 13 mini</td>
+<td>M3, T4</td>
+</tr>
+<tr>
+<td>Apple</td>
+<td>iPhone 13</td>
+<td>M3, T4</td>
+</tr>
+<tr>
+<td>Apple</td>
+<td>iPhone 13 Pro</td>
+<td>M3, T4</td>
+</tr>
+<tr>
+<td>Apple</td>
+<td>iPhone 13 Pro Max</td>
+<td>M3, T4</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S21 FE 5G(SM-G990E/DS, SM-G990E)</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto E40: XT2159-1, XT2159-2,  XT2159-3,  XT2159-4,  XT2159-5,  XT2159-6,  XT2159-8</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G51 5G: XT2171-1</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G51 5G: XT2171-2, XT2171-3 XT2171-5</td>
+<td></td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>G300</td>
+<td>T3/M3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A21(SM-A215U1, SM-A215U, SM-A215W, SM-A215DL)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A03s(SM-A037U, SM-A037U1, SM-A037U1/DS, SM-S134DL)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A13 5G(SM-A136U, SM-A136U1, SM-S136DL)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G71 5G: XT2169-1, XT2169-2</td>
+<td>Yes, XT2169-1 is M3/T3</td>
+</tr>
+<tr>
+<td>HUAWEI</td>
+<td>HUAWEI nova 9</td>
+<td></td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>G50</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>6310</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A03(SM-A032M/DS, SM-A032M)</td>
+<td></td>
+</tr>
+<tr>
+<td>Moxee</td>
+<td>MH-T6000</td>
+<td>T3/M3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S21 FE 5G(SM-G990U, SM-G990U1, SM-G990U1/DS, SM-G990U2,  SM-G990U3/DS)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Haechi(SM-G889A)</td>
+<td>M3/T4</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A03(SM-A035M/DS, SM-A035M)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S21+ 5G(SM-G996U)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Z Flip3 5G(SM-F711U)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S20 FE (SM-G780F/DSM, SM-G780F/DS, SM-G780F)</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G200 5G: XT2175-1, XT2175-2</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G Stylus (2022): XT2211-1, XT2211-2, XT2211DL</td>
+<td>Yes, M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A71 5G(SM-A716V)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>HUAWEI</td>
+<td>P50 PRO</td>
+<td></td>
+</tr>
+<tr>
+<td>OnePlus</td>
+<td>NE2217</td>
+<td>HAC T-Coil Coupling T-rating: T3
+HAC Acoustic Coupling M: M3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A53 5G(SM-A536V, SM-A536U, SM-A536U1, SM-A536U1/DS, SM-S536DL )</td>
+<td>Information not available</td>
+</tr>
+<tr>
+<td>Schok</td>
+<td>SC3218T</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A71 5G(SM-A716U, SM-A716U1)</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A53 5G(SM-A536E/DS, SM-A536E)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A33 5G(SM-A336M/DSN, SM-A336M, SM-A336E/DSN, SM-A336E, SM-A336B/DSN, SM-A336E/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>OnePlus</td>
+<td>GN2200</td>
+<td>T3/M3</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Motorola Edge+ 5G UW (2022): XT2201-4</td>
+<td>Yes, M3/T3</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Motorola Edge+ (2022): XT2201-3, XT2201-5</td>
+<td>Yes, M3/T3</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Motorola Edge 30 Pro: XT2201-1, XT2201-2</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A13(SM-A135M/DS, SM-A135M, SM-A135F/DSN, SM-A135F/DS, SM-A135F)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S22(SM-S901U)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S22+(SM-S906U)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S22 Ultra 5G(SM-S908U)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S22(SM-S901E/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S22+(SM-S906E/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S22 Ultra(SM-S908E/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy M23 5G(SM-M236B/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A32 5G(SM-A326U, SM-A326U1/DS, SM-S326DL)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G 5G (2022): XT2213-1, XT2213-2, XT2213-3, XT2213DL</td>
+<td>Yes, M3/T3</td>
+</tr>
+<tr>
+<td>Google</td>
+<td>Pixel 6a (GX7AS, GB62Z, G1AZG (Sub6 SKU))</td>
+<td>M3/T4</td>
+</tr>
+<tr>
+<td>OPPO</td>
+<td>CPH2305</td>
+<td></td>
+</tr>
+<tr>
+<td>OPPO</td>
+<td>CPH2307</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A23 (SM-A235M/DS, SM-A235M)</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G Stylus 5G (2022): XT2215-1, XT2215-2, XT2215-3, XT2215-4, XT2215DL</td>
+<td>Yes, M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy M33 5G(SM-M336B/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>OPPO</td>
+<td>CPH2371</td>
+<td></td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>2760 Flip</td>
+<td>M4/T4</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Motorola Edge 30: XT2203-1</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A73 5G(SM-A736B/DS, SM-A736B)</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G52J 5G: XT2219-1, XT2219-2</td>
+<td></td>
+</tr>
+<tr>
+<td>Sony</td>
+<td>Xperia PRO-I</td>
+<td>M4/T4</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto E32: XT2227-1, XT2227-2, XT2227-3, XT2227-4</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G22: XT2231-1, XT2231-2, XT2231-3, XT2231-4, XT2231-5</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto E32S: XT2229-2, XT2229-3, XT2229-4, XT2229-5, XT2229-6</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G42: XT2233-1, XT2233-2</td>
+<td></td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>G11</td>
+<td></td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>G21</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy M53 5G(SM-M536B/DSN)</td>
+<td></td>
+</tr>
+<tr>
+<td>HUAWEI</td>
+<td>nova 9SE</td>
+<td></td>
+</tr>
+<tr>
+<td>Apple</td>
+<td>iPhone SE</td>
+<td>M3, T4</td>
+</tr>
+<tr>
+<td>Moxee</td>
+<td>MT-T8B22</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>C21</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A13 5G(SM-A136U, SM-A136U1, SM-S136DL, SM-A136M/DS)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G82 5G: XT2225-1, XT2225-2</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G62 5G: XT2223-1, XT2223-2</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G52: XT2221-1, XT2221-2</td>
+<td></td>
+</tr>
+<tr>
+<td>Sony</td>
+<td>Xperia 10 IV</td>
+<td></td>
+</tr>
+<tr>
+<td>Sony</td>
+<td>Xperia 1 IV</td>
+<td>M4/T4</td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>C100</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>C200</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>C2 2nd Edition</td>
+<td></td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>C21 Plus</td>
+<td></td>
+</tr>
+<tr>
+<td>ANS</td>
+<td>ACK2326</td>
+<td>M3/T4</td>
+</tr>
+<tr>
+<td>Orbic</td>
+<td>RC609L</td>
+<td>M3/T4</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Motorola Edge (2022): XT2205-1, XT2205-2, XT2205-3</td>
+<td>Yes, M3/T3</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G32: XT2235-1, XT2235-2, XT2235-3</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A04(SM-A045M/DS, SM-A045M, SM-A045F/DS, SM-A045F)</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto S30 Pro: XT2243-2</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Motorola Edge 30 Fusion: XT2243-1</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A23 5G(SM-A236M/DSN, SM-A236M/N, SM-A236E/DSN)</td>
+<td></td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>G400 5G</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>G100</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>OnePlus</td>
+<td>CPH2419</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>HUAWEI</td>
+<td>nova Y70</td>
+<td></td>
+</tr>
+<tr>
+<td>HUAWEI</td>
+<td>nova Y90</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Motorola Edge 30 Ultra: XT2241-2</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto X30 Pro: XT2241-1</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Motorola Edge 30 Neo: XT2245-1</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G72: XT2255-1, XT2255-2, XT2255-3</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Z Fold4(SM-F936B, SM-F936B/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Z Flip4(SM-F721B)</td>
+<td></td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>8210 4G</td>
+<td></td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>5710 XA</td>
+<td></td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>2660 Flip</td>
+<td></td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>G11 Plus</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G Play - 2023: XT2271-1, XT2271-1PP, XT2271-3, XT2271-4, XT2271-5, XT2271DL</td>
+<td>Yes, M3/T3</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Motorola Razr: XT2255-1</td>
+<td></td>
+</tr>
+<tr>
+<td>Google</td>
+<td>Pixel 7</td>
+<td>M3/T3 rating for US SKUs</td>
+</tr>
+<tr>
+<td>Google</td>
+<td>Pixel 7 Pro</td>
+<td>M3/T4 rating for US SKUs</td>
+</tr>
+<tr>
+<td>OPPO</td>
+<td>CPH2387</td>
+<td></td>
+</tr>
+<tr>
+<td>OPPO</td>
+<td>CPH2359</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto E22: XT2239-6, XT2239-7, XT2239-8, XT2239-9, XT2239-10, XT2239-16, XT2239-17, -18, -19, -20</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A04e(SM-A042M/DS, SM-A042M)</td>
+<td></td>
+</tr>
+<tr>
+<td>Sony</td>
+<td>Xperia 5 IV</td>
+<td>M4/T4</td>
+</tr>
+<tr>
+<td>HUAWEI</td>
+<td>nova 10 Pro</td>
+<td></td>
+</tr>
+<tr>
+<td>koobee</td>
+<td>SL004T</td>
+<td>M3 T3</td>
+</tr>
+<tr>
+<td>Apple</td>
+<td>iPhone 14</td>
+<td>M3, T4</td>
+</tr>
+<tr>
+<td>Apple</td>
+<td>iPhone 14 Plus</td>
+<td>M3, T4</td>
+</tr>
+<tr>
+<td>Apple</td>
+<td>iPhone 14 Pro</td>
+<td>M3, T4</td>
+</tr>
+<tr>
+<td>Apple</td>
+<td>iPhone 14 Pro Max</td>
+<td>M3, T4</td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>C31</td>
+<td></td>
+</tr>
+<tr>
+<td>Sonim</td>
+<td>XP5900</td>
+<td>Compliant HAC M3/T4</td>
+</tr>
+<tr>
+<td>Sonim</td>
+<td>XP9900</td>
+<td>Compliant HAC M4/T3</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G73 5G: XT2237-1, XT2237-2</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G Power 5G - 2023: XT2311-1, XT2311-2, XT2311-2PP, XT2311-3, XT2311-4, XT2311-5, XT2311DL</td>
+<td>Yes, M3/T3</td>
+</tr>
+<tr>
+<td>Hot Pepper</td>
+<td>HPPL62A</td>
+<td>M4/T4</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Motorola Edge+ (2023): XT2301-1, XT2301-2</td>
+<td>Yes, M3/T3</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Motorola Edge 40 Pro: XT2301-4</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G53 5G: XT2335-1, XT2335-2, XT2335-3, XT2335-4, XT2335-5, XT2335-6</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G 5G (2023): XT2313-1PP, XT2313-3, XT2313-4, XT2313-6, XT2313DL</td>
+<td>Yes, M3/T3</td>
+</tr>
+<tr>
+<td>Bounce</td>
+<td>SL201D</td>
+<td>M4 T3</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto X40: XT2301-5</td>
+<td></td>
+</tr>
+<tr>
+<td>HUAWEI</td>
+<td>nova Y61</td>
+<td></td>
+</tr>
+<tr>
+<td>HUAWEI</td>
+<td>nova 10 SE</td>
+<td></td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>105</td>
+<td></td>
+</tr>
+<tr>
+<td>BLU</td>
+<td>Studio Mini 2023</td>
+<td>M4/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A14 5G(SM-A146M/DS, SM-A146M, SM-A146B/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G13: XT2331-1, XT2331-2, XT2331-3, XT2331-4</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G23: XT2333-1, XT2333-2, XT2333-3, XT2333-4, XT2333-5</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>ThinkPhone by Motorola: XT2309-1, XT2309-2</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>ThinkPhone by Motorola: XT2309-3</td>
+<td>Yes, M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A54 5G(SM-A546E/DS, SM-A546E)</td>
+<td></td>
+</tr>
+<tr>
+<td>Google</td>
+<td>Pixel 7a</td>
+<td>TBC. M3/T3 minimum.</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A04s(SM-A047M/DS, SM-A047M)</td>
+<td></td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>C12</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A34 5G(SM-A346M/DSN, SM-A346M/N)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A14(SM-A145M/DS, SM-A145M, SM-A145F/DSN, SM-A145F/N, SM-A145F/DS, SM-A145F, ETC)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A24(SM-A245M/DSN, SM-A245M/N)</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto E13: XT2345-1, XT2345-2, XT2345-3, XT2345-4, XT2345-6</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G Stylus 5G - 2023: XT2315-1, XT2315-4, XT2315-5</td>
+<td>Yes, M3/T3</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G Stylus - 2023: XT2317-1, XT2317-2, XT2317-3, XT2317DL</td>
+<td>Yes, M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S23 Ultra (SM-S918B/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S23+ (SM-S916B/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S23(SM-S911B/DS)</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Motorola Razr+: XT2321-1, XT2321-2</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Motorola Razr+: XT2321-3, XT2321-5</td>
+<td>Yes, M3/T3</td>
+</tr>
+<tr>
+<td>Google</td>
+<td>Pixel Fold</td>
+<td>TBC. M3/T3 minimum.</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Motorola Edge 2023: XT2303-1, XT2303-2, XT2303-3</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Motorola Edge+ 2023: XT2305-1, XT2305-2</td>
+<td>Yes, M3/T3</td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>105 4G</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G54 5G: XT2343-1, XT2343-2, XT2343-3, XT2343-4, XT2343-5, XT2343-6</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G14: XT2341-1, XT2341-2, XT2341-3, XT2341-4</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Motorola Razr 40: XT2323-1, XT2323-3,  XT2323-4, XT2323-7</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A05(SM-A055M/DS, SM-A055M)</td>
+<td></td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>G60 5G</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Z Flip5(SM-F731U, SM-F731U1, SM-F731W, SM-F731B)</td>
+<td>T3/M3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Z Fold5(SM-F946U, SM-F946U1, SM-F946W)</td>
+<td>M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Z Fold5(SM-F946B/DS, SM-F946B)</td>
+<td></td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>C22</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Motorola Edge 40 Neo: XT2307-1, XT2307-2, XT2307-3</td>
+<td></td>
+</tr>
+<tr>
+<td>Google</td>
+<td>Pixel 8 Pro</td>
+<td>M3/T4 rating for US SKUs</td>
+</tr>
+<tr>
+<td>Google</td>
+<td>Pixel 8</td>
+<td>M3/T4 rating for US SKUs</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G84 5G: XT2347-1, XT2347-2</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A05s (SM-A057F/DS, SM-A057F, SM-A057M/DS, SM-A057M)</td>
+<td></td>
+</tr>
+<tr>
+<td>OPPO</td>
+<td>CPH2579</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S23 FE (SM-S711B/DS, SM-S711B)</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G Play - 2024: XT2413-1, XT2413-2, XT2413-3, XT2413V</td>
+<td>Yes, M3/T3</td>
+</tr>
+<tr>
+<td>Apple</td>
+<td>iPhone 15 Pro</td>
+<td>M3, T4</td>
+</tr>
+<tr>
+<td>Apple</td>
+<td>iPhone 15 Plus</td>
+<td>M3, T4</td>
+</tr>
+<tr>
+<td>Apple</td>
+<td>iPhone 15</td>
+<td>M3, T4</td>
+</tr>
+<tr>
+<td>Apple</td>
+<td>iPhone 15 Pro Max</td>
+<td>M3, T4</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G 5G - 2024: XT2417-1, XT2417-2, XT2417-4, XT2417D</td>
+<td>Yes, M3/T4</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G Power 5G - 2024: XT2415-1, XT2415-3, XT2415-5, XT2413V</td>
+<td>Yes, M3/T3</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A15 5G (SM-A156U, SM-A156U1/DS, SM-A156W, SM-S156V)</td>
+<td>Information Not Available</td>
+</tr>
+<tr>
+<td>Sony</td>
+<td>Xperia 1 V</td>
+<td>M4/T4</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A25 5G (SM-A256E/DSN, SM-A256E/N)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A15 (SM-A155M/DSN, SM-A155M/N)</td>
+<td></td>
+</tr>
+<tr>
+<td>Sony</td>
+<td>Xperia 5 V</td>
+<td>M4/T4</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A15 5G (SM-A156M/DSN, SM-A156M/N)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy XCover7 (SM-G556B)</td>
+<td></td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>110 4G</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G24: XT2423-1, XT2423-2, XT2423-3, XT2423-5, XT2423-6</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G24 Power: XT2425-1, XT2425-2, XT2425-3, XT2425-4</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G34 5G: XT2363-1, XT2363-2, XT2363-3, XT2363-4, XT2363-5</td>
+<td></td>
+</tr>
+<tr>
+<td>HUAWEI</td>
+<td>nova Y91</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy M55 (SM-M556B/DS, SM-M556B)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A55 5G (SM-A556E/DS, SM-A556E)</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>Moto G04: XT2421-1, XT2421-2, XT2421-3, XT2421-4, XT2421-5</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>SM-S926U ( SM-S926U, SM-S926U1, SM-S926W)</td>
+<td>Information Not Available</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>SM-S928B/DS ( SM-S928B/DS, SM-S928B)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>SM-S921B/DS ( SM-S921B/DS, SM-S921B)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>SM-S926B/DS (SM-S926B/DS, SM-S926B)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S24 (SM-S921U, SM-S921U1)</td>
+<td>Information Not Available</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S24 Ultra (SM-S928U, SM-S928U1)</td>
+<td>Information Not Available</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A35 5G (SM-A356U, SM-A356U1, SM-S356V)</td>
+<td>Information Not Available</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A35 5G (SM-A356E/DS, SM-A356E)</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>moto g04s: XT2421-6, XT2421-7, XT2421-8, XT2421-9, XT2421-10</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>motorola edge 50 pro: XT2403-1, XT2403-2, XT2403-4, XT2403-5, XT2403-6</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>moto g stylus 5G - 2024: XT2419-1, XT2419-2, XT2419-3, XT2419V</td>
+<td>Yes, passes C63.19-2019</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>motorola edge 50 ultra: XT2401-1, XT2401-2</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>moto e14: XT2421-12, XT2421-13, XT2421-14, XT2421-15</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>motorola edge 2024: XT2405-1, XT2405-2</td>
+<td>Yes, passes C63.19-2019</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>motorola edge 50 fusion: XT2429-1, XT2429-2, XT2429-3, XT2429-4</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>motorola razr 2024: XT2453-3, XT2453-4, XT2453-5, XT2453V</td>
+<td>Yes, passes C63.19-2019</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>motorola razr+ 2024: XT2451-1, XT2451-2</td>
+<td>Yes, passes C63.19-2019</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>motorola razr 50: XT2453-1, XT2453-2, XT2453-7, XT2453-8, XT2453-9</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>motorola razr 50 ultra: XT2451-3, XT2451-4</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>moto g85 5G: XT2427-1, XT2427-2, XT2427-3, XT2427-4</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A06 (SM-A065M/DS, SM-A065M)</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>motorola edge 50 neo: XT2409-1, XT2409-2, XT2409-3, XT2409-5</td>
+<td></td>
+</tr>
+<tr>
+<td>Nokia</td>
+<td>Nokia 215 4G</td>
+<td></td>
+</tr>
+<tr>
+<td>HMD</td>
+<td>HMD Pulse+</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S24 FE (SM-S721U, SM-S721U1)</td>
+<td>Information Not Available</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Z Flip6 (SM-F741U, SM-F741U1, SM-F741W)</td>
+<td>Information Not Available</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Z Flip6 (SM-F741B)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Z Fold6 (SM-F956U, SM-F956U1, SM-F956W)</td>
+<td>Information Not Available</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy Z Fold6 (SM-F956B/DS, SM-F956B)</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy S24 FE (SM-S721B/DS, SM-S721B)</td>
+<td></td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>moto g35 5G: XT2433-1, XT2433-2, XT2433-3, XT2433-4, XT2433-5</td>
+<td></td>
+</tr>
+<tr>
+<td>Sonim</td>
+<td>X320</td>
+<td>Follow HAC 2019</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy A16 5G (SM-A166M/DS, SM-A166M)</td>
+<td></td>
+</tr>
+<tr>
+<td>Xiaomi</td>
+<td>Xiaomi 14Ultra</td>
+<td></td>
+</tr>
+<tr>
+<td>Xiaomi</td>
+<td>Xiaomi14TPro</td>
+<td></td>
+</tr>
+<tr>
+<td>Xiaomi</td>
+<td>Xiaomi14T</td>
+<td></td>
+</tr>
+<tr>
+<td>Redmi</td>
+<td>Redmi Note13Pro+5G</td>
+<td></td>
+</tr>
+<tr>
+<td>Redmi</td>
+<td>Redmi Note13Pro5G</td>
+<td></td>
+</tr>
+<tr>
+<td>Redmi</td>
+<td>RedmiNote13Pro</td>
+<td></td>
+</tr>
+<tr>
+<td>Redmi</td>
+<td>RedmiNote135G</td>
+<td></td>
+</tr>
+<tr>
+<td>Redmi</td>
+<td>RedmiNote13</td>
+<td></td>
+</tr>
+<tr>
+<td>Redmi</td>
+<td>Redmi13C</td>
+<td></td>
+</tr>
+<tr>
+<td>Redmi</td>
+<td>Redmi A3</td>
+<td></td>
+</tr>
+<tr>
+<td>Redmi</td>
+<td>Redmi12C</td>
+<td></td>
+</tr>
+<tr>
+<td>Redmi</td>
+<td>Redmi12</td>
+<td></td>
+</tr>
+<tr>
+<td>Redmi</td>
+<td>Redmi125G</td>
+<td></td>
+</tr>
+<tr>
+<td>Xiaomi</td>
+<td>Xiaomi13TPro</td>
+<td></td>
+</tr>
+<tr>
+<td>Xiaomi</td>
+<td>Xiaomi13T</td>
+<td></td>
+</tr>
+<tr>
+<td>Xiaomi</td>
+<td>Xiaomi14</td>
+<td></td>
+</tr>
+<tr>
+<td>Sonim</td>
+<td>XP Pro</td>
+<td>Follow HAC 2019</td>
+</tr>
+<tr>
+<td>Motorola</td>
+<td>moto g75 5G: XT2437-1, XT2437-2, XT2437-3, XT2437-4</td>
+<td></td>
+</tr>
+<tr>
+<td>Apple</td>
+<td>iPhone 16</td>
+<td>Not applicable to 2019 ANSI C63.19, compliant through waiver DA 23-914.</td>
+</tr>
+<tr>
+<td>Apple</td>
+<td>iPhone 16 Plus</td>
+<td>Not applicable to 2019 ANSI C63.19, compliant through waiver DA 23-914.</td>
+</tr>
+<tr>
+<td>Apple</td>
+<td>iPhone 16 Pro</td>
+<td>Not applicable to 2019 ANSI C63.19, compliant through waiver DA 23-914.</td>
+</tr>
+<tr>
+<td>Apple</td>
+<td>iPhone 16 Pro Max</td>
+<td>Not applicable to 2019 ANSI C63.19, compliant through waiver DA 23-914.</td>
+</tr>
+<tr>
+<td>Redmi</td>
+<td>Redmi 14C</td>
+<td></td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Galaxy  A16(SM-A165M/DS, SM-A165M)</td>
+<td></td>
+</tr>
+<tr>
+<td>HMD</td>
+<td>HMD Barbie Phone</td>
+<td></td>
+</tr>
+<tr>
+<td>Sony</td>
+<td>Xperia 10 V</td>
+<td></td>
+</tr>
+<tr>
+<td>Sony</td>
+<td>Xperia 10 VI</td>
+<td></td>
+</tr>
+<tr>
+<td>Sony</td>
+<td>Xperia 1 VI</td>
+<td>M4/T4</td>
+</tr>
+</tbody>
+</table>
+<p>原始資料來源：<a href="https://www.gari.info/download-gari-db.cfm">GARI Database</a></p>
+<hr>
+<footer><section id="about"><h2>行動電話助聽器相容性 (HAC) 資料表產生器</h2>
+<dl>
+<dt>目前使用的資料表產生器版本</dt>
+<dd>v2024.12.06.2</dd>
+</dl>
+<ul>
+<li><a href="https://github.com/JediLin/Mobile-phones-HAC-data-table-generator/releases/latest">下載最新版套件</a></li>
+<li><a href="https://github.com/JediLin/Mobile-phones-HAC-data-table-generator/issues">意見回饋／瑕疵回報</a></li>
+<li><a href="https://github.com/JediLin/Mobile-phones-HAC-data-table-generator">專案網頁</a></li>
+<li><a href="https://jedi.org/blog/archives/006259.html">部落格文章</a></li>
+</ul></section><section id="link"><h2>相關連結</h2>
+<ul>
+<li>
+<abbr title="Federal Communications Commission">FCC</abbr>: <a href="https://www.fcc.gov/hearing-aid-compatibility-wireless-telephones">Hearing Aid Compatible Mobile Handsets</a>
+</li>
+<li>
+<abbr title="Global Accessibility Reporting Initiative">GARI</abbr>: <a href="https://www.gari.info/findphones.cfm">Find Accessible Devices and Apps</a>
+</li>
+<li>《<a href="https://jedi.org/blog/archives/006308.html">助聽器公司不說的事：T 線圈</a>》部落格文章</li>
+</ul></section></footer>
+</body>
+</html><script>
+function myFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>

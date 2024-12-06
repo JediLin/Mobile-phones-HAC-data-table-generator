@@ -12,13 +12,13 @@
 
 ## 下載
 
-請下載[最新版套件](https://github.com/JediLin/Mobile-phones-HAC-data-table-generator/releases/latest)，找 `HAC.zip` 那個連結，或者已經整理好所有第三方工具的 `HAC_full_x64.zip` 連結。
+請下載[最新版套件](https://github.com/JediLin/Mobile-phones-HAC-data-table-generator/releases/latest)，找 `HAC_full_x64.zip` 那個連結，這是對應目前大多數使用者 x64 架構作業系統的整合版本；如果想要自己手動下載第三方工具，例如要用於不同架構的作業系統，也可以用 `HAC.zip` 連結。
 
 使用前記得要解壓縮。
 
 ## 安裝‧環境設定
 
-這是一個可攜帶、免安裝的工具，只需要把幾個必要的檔案放在同一個資料夾內，就可以使用了。最必要的檔案是 `update.bat` 和 `mobile-accessibility-phones.xsl`，另外還有幾個開源工具要分別下載：
+這是一個可攜帶、免安裝的工具，只需要把幾個必要的檔案放在同一個資料夾內，就可以使用了。最必要的檔案是 `update.bat` 和 `mobile-accessibility-phones.xsl`，另外還用到幾個開源工具（已經內含於 `HAC_full_x64.zip` ，不必另外下載）：
 
 - [Windows binaries of GNU Wget](https://eternallybored.org/misc/wget/)
   - 根據系統架構 (x86, x64, ARM64) 下載最新版的 EXE 檔案即可
@@ -41,6 +41,16 @@
 - 如果不想更新資料，只想單純瀏覽檢視資料表，可以直接用任何網頁瀏覽器開啟 `mobile-accessibility-phones.html` 即可。
 - 如果要把資料表傳給別人，只需要提供 `mobile-accessibility-phones.html` 檔案就夠了。
 
-## 技術細節說明
+### 工作排程
 
-請參考我的部落格文章：《[查詢手機的助聽器相容性評級 (HAC Rating)](https://jedi.org/blog/archives/006259.html)》
+- 如果需要排程自動更新資料表，可以使用 `silent_update.bat`
+- 建議排程每個月或每季更新一次就可以了，太頻繁更新可能會被當成異常存取
+- `silent_update.bat` 同樣會建立檔案備份及自動更新資料表，但過程中不提供任何訊息，操作完成後也不會自動用瀏覽器開啟資料表
+- 最後一次執行 `silent_update.bat` 的相關訊息會儲存在 `silent_update.log` 日誌檔（這個檔案會自動建立及覆寫），如果遭遇異常可以用來釐清執行情況
+
+## 參考資料
+
+- 《[查詢手機的助聽器相容性評級 (HAC Rating)](https://jedi.org/blog/archives/006259.html)》部落格文章
+- 《[助聽器公司不說的事：T 線圈](https://jedi.org/blog/archives/006308.html)》部落格文章
+- FCC: [Hearing Aid Compatible Mobile Handsets](https://www.fcc.gov/hearing-aid-compatibility-wireless-telephones)
+- GARI: [Find Accessible Devices and Apps](https://www.gari.info/findphones.cfm)
