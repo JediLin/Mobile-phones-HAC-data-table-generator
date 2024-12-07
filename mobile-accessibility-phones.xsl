@@ -124,9 +124,24 @@ a:active {
 a:hover {
   color: var(--red);
 }
+label {
+  color: var(--comment);
+}
+input {
+  background: var(--yellow);
+}
+input:placeholder-shown {
+  background: var(--background);
+}
+input::placeholder {
+  color: var(--yellow);
+}
 input:focus, textarea:focus {
   color: var(--foreground);
   background: var(--currentline);
+}
+input:focus-visible {
+  outline: 3px solid var(--yellow);
 }
 table {
   border-collapse: collapse;
@@ -138,6 +153,12 @@ table thead th, table tbody td {
   padding: 5px;
   max-width: 20em;
   word-wrap: break-word;
+}
+table thead th {
+  background: var(--background);
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 table + * {
   padding-top: 1em;
@@ -163,10 +184,10 @@ section#link {
     </head>
     <body>
       <h1>行動電話助聽器相容性 (HAC) 評級</h1>
-      <table id="myTable">
+      <table id="dataTable">
       	<caption>製表日期：<xsl:value-of select="date:year()"/> 年 <xsl:value-of select="date:month-in-year()"/> 月 <xsl:value-of select="date:day-in-month()"/> 日</caption>
       	<thead>
-      	  <tr><th>廠牌<br/>快查：<input type="text" id="myInput" onkeyup="myFunction()" placeholder="輸入廠牌"/></th><th>型號</th><th>HAC 評級</th></tr>
+      	  <tr><th>廠牌<br/><label for="brandInput">快查：</label><input type="text" id="brandInput" onkeyup="filterFunction()" placeholder="輸入廠牌" title="輸入廠牌" aria-description="輸入行動電話廠牌"/></th><th>型號<br/><label for="brandInput">快查：</label><input type="text" id="modelInput" onkeyup="filterFunction()" placeholder="輸入型號" title="輸入型號" aria-description="輸入行動電話型號"/></th><th>HAC 評級</th></tr>
       	</thead>
       	<tbody>
           <xsl:for-each select="rss">
@@ -195,7 +216,7 @@ section#link {
           <h2>行動電話助聽器相容性 (HAC) 資料表產生器</h2>
           <dl>
             <dt>目前使用的資料表產生器版本</dt>
-            <dd>v2024.12.06.2</dd>
+            <dd>v2024.12.07</dd>
           </dl>
           <ul>
             <li><a href="https://github.com/JediLin/Mobile-phones-HAC-data-table-generator/releases/latest">下載最新版套件</a></li>
@@ -216,20 +237,24 @@ section#link {
     </body>
     </html>
     <script>
-function myFunction() {
+function filterFunction() {
   // Declare variables
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
+  var input1, input2, filter1, filter2, table, tr, td1, td2, i, txtValue;
+  input1 = document.getElementById("brandInput");
+  input2 = document.getElementById("modelInput");
+  filter1 = input1.value.toUpperCase();
+  filter2 = input2.value.toUpperCase();
+  table = document.getElementById("dataTable");
   tr = table.getElementsByTagName("tr");
 
   // Loop through all table rows, and hide those who don't match the search query
   for (i = 0; i <xsl:text disable-output-escaping="yes">&lt;</xsl:text> tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) <xsl:text disable-output-escaping="yes">&gt;</xsl:text> -1) {
+    td1 = tr[i].getElementsByTagName("td")[0];
+    td2 = tr[i].getElementsByTagName("td")[1];
+    if (td1 || td2) {
+      txtValue1 = td1.textContent || td1.innerText;
+      txtValue2 = td2.textContent || td2.innerText;
+      if (txtValue1.toUpperCase().indexOf(filter1) <xsl:text disable-output-escaping="yes">&gt;</xsl:text> -1 <xsl:text disable-output-escaping="yes">&amp;&amp;</xsl:text> txtValue2.toUpperCase().indexOf(filter2) <xsl:text disable-output-escaping="yes">&gt;</xsl:text> -1) {
         tr[i].style.display = "";
       } else {
         tr[i].style.display = "none";
