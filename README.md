@@ -38,6 +38,7 @@
 - 執行 `update.bat` 即可自動下載最新的 GARI 行動電話親和力功能資料庫，擷取資料及轉換檔案，在相同路徑位置儲存成 `mobile-accessibility-phones.html`，然後呼叫瀏覽器開啟。
 - 如果不想更新資料，只想單純瀏覽檢視資料表，可以直接用任何網頁瀏覽器開啟 `mobile-accessibility-phones.html` 即可。
 - 如果要把資料表傳給別人，只需要提供 `mobile-accessibility-phones.html` 檔案就夠了。
+- 只有更新資料的時候需要網路連線，瀏覽、檢視、查詢資料表不需要網路，也可以把 `mobile-accessibility-phones.html` 檔案放在手機或平板電腦上使用（當然，螢幕太小可能不會很好用）。
 
 ### 工作排程
 
