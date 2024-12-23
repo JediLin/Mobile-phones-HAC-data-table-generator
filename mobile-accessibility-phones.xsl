@@ -216,7 +216,7 @@ section#link {
           <h2>行動電話助聽器相容性 (HAC) 資料表產生器</h2>
           <dl>
             <dt>目前使用的資料表產生器版本</dt>
-            <dd>v2024.12.07</dd>
+            <dd>v2024.12.23</dd>
           </dl>
           <ul>
             <li><a href="https://github.com/JediLin/Mobile-phones-HAC-data-table-generator/releases/latest">下載最新版套件</a></li>
